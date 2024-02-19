@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech Converter</title>
+  <style>
+    /* Import Google font - Poppins */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      position: relative; /* Ensure position for absolute elements */
+    }
+
+    /* Floating obstacles */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: floatObstacle 5s infinite ease-in-out alternate; /* Floating animation */
+    }
+
+    @keyframes floatObstacle {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    .container {
+      position: relative;
+      max-width: 350px;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      border-top: 5px solid #6e93f7;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    header {
+      font-size: 24px;
+      color: #333;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      margin: 20px 0;
+      padding: 10px 15px;
+      resize: none;
+      outline: none;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 0;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, #6e93f7, #4070f4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #4070f4, #6e93f7);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>Text to Speech Converter</header>
+    <textarea placeholder="Enter text"></textarea>
+    <button>Convert to Speech</button>
+  </div>
+
+  <script>
+    // Your JavaScript code here
+    const textarea = document.querySelector("textarea");
+    const button = document.querySelector("button");
+    let isSpeaking = true;
+
+    const textToSpeech = () => {
+      const synth = window.speechSynthesis;
+      const text = textarea.value;
+
+      if (!synth.speaking && text) {
+        const utternace = new SpeechSynthesisUtterance(text);
+        synth.speak(utternace);
+      }
+
+      if (text.length > 50) {
+        if (synth.speaking && isSpeaking) {
+          button.innerText = "Pause";
+          synth.resume();
+          isSpeaking = false;
+        } else {
+          button.innerText = "Resume";
+          synth.pause();
+          isSpeaking = true;
+        }
+      } else {
+        isSpeaking = false;
+        button.innerText = "Speaking";
+      }
+
+      setInterval(() => {
+        if (!synth.speaking && !isSpeaking) {
+          isSpeaking = true;
+          button.innerText = "Convert to Speech";
+        }
+      });
+    };
+
+    button.addEventListener("click", textToSpeech);
+  </script>
+</body>
+</html>
