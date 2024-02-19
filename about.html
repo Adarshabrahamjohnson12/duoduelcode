@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transform-style: preserve-3d;
+            animation: fadeInUp 1s ease forwards;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .container:hover h1 {
+            color: #ff7e5f;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .linkedin-link {
+            color: #0077B5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+            color: #004477;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="profile-pic" src="https://i.ibb.co/YTftdsR/adarsh.jpg" alt="Adarsh" border="0">
+        <h1>Adarsh Abraham Johnson</h1>
+        <p>Web Developer | Designer</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/adarsh-abraham-johnson?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACuJH6sBKepf2SxY98PG6Nt8i8GaKA8tnpO&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BelbhE%2F2ITw2MyPfYseB3ug%3D%3D" target="_blank">LinkedIn Profile</a>
+    </div>
+
+    <div class="container">
+        <img class="profile-pic" src="https://i.ibb.co/D51LkF7/swathi.jpg" alt="Swathi" border="0">
+        <h1>Swathi H. Nair</h1>
+        <p>Graphic Designer | Content Creator</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/swathi-h-nair-321790294?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEdObskBmen4-Ztt5UBd8L0t3_XgQaXpENA&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BFx03J%2BZkRCGuYILBvhsQgg%3D%3D" target="_blank">LinkedIn Profile</a>
+    </div>
+</body>
+</html>
+
