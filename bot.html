@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chatbot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/2779/2019/5/17/College%20Photo.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Cover the entire background */
+            overflow: hidden; /* Hide overflowing content */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Added box shadow for 3D effect */
+            perspective: 1000px; /* Added perspective for 3D effect */
+            animation: fadeInUp 1s ease forwards, bounce 2s infinite alternate; /* Fade in animation and bouncing animation */
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .container:hover {
+            transform: rotateY(5deg); /* Rotate container on hover for 3D effect */
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase; /* Uppercase heading text */
+            letter-spacing: 2px; /* Increased letter spacing */
+            font-weight: bold; /* Bold font weight */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow */
+            animation: glow 2s ease infinite alternate; /* Text glow animation */
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff7e5f, 0 0 40px #ff7e5f, 0 0 50px #ff7e5f, 0 0 60px #ff7e5f, 0 0 70px #ff7e5f;
+            }
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.2em; /* Increased font size */
+            margin-bottom: 30px;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+            border: none; /* Remove iframe border */
+            border-radius: 10px; /* Added border radius */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Added box shadow for iframe */
+            transform-style: preserve-3d; /* Preserve 3D transformations */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Chatbot</h1>
+        <p>Feel free to interact with our intelligent assistant below:</p>
+        <iframe height="430" width="350" src="https://console.dialogflow.com/api-client/demo/embedded/a789eec5-d85c-4fb3-9f9b-c0a32bab1c0e"></iframe>
+    </div>
+</body>
+</html>
+
+
